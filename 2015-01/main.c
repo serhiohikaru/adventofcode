@@ -15,10 +15,17 @@ int main()
   }
 
   int c;
+  int counter = 0;
   while ((c = fgetc(input)) != EOF)
     {
+      counter++;
       if( c == (int)up_char[0]) { result++; }
       if( c == (int)down_char[0]) { result--; }
+      if( result == -1 )
+      {
+        printf("%i \n", counter);
+        return 0;
+      }
     }
 
   printf( "%i \n", result );
