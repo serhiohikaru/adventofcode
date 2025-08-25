@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdint.h>
+#include <string.h>
+#include <stdlib.h>
 
-int getRectSurfArea(int w, int l, int h){
   return 2 * l * w + 2 * w * h + 2 * h * l;
 }
 
@@ -20,24 +20,23 @@ int calcSmallestSize(int w, int l, int h){
   }
 }
 
-
 int main(){
   int w = 0, l = 0, h = 0;
-  int result = 0;
   const char* fname = "./test_input.txt";
-  const char* delimeter = "x";
-  const char* newline = "\n";
   FILE* input = fopen(fname, "r");
-
-  if( !input ){
-    perror("Could not open file!");
-  }
-
-  int c, i;
+  int counter = 0;
+  
+  int c;
   while ((c = fgetc(input)) != EOF){
-      i = stoi(c);
-      printf("%i \n", i);
+    switch (counter) {
+      case 0:
+        l = 
+    }
   }
+
+  printf("%i \n", l);
+  printf("%i \n", w);
+  printf("%i \n", h);
 
   return 0;
 }
