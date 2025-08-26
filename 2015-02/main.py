@@ -3,6 +3,7 @@ import itertools
 packageArea = 0
 spareArea = 0
 totalArea = 0
+totalRibbon = 0
 input = ()
 
 def calculate_package_area(l, w, h):
@@ -21,7 +22,9 @@ with open("./input.txt", "+r", encoding="utf-8") as f:
         packageArea = (calculate_package_area(l, w, h))
         side_list.remove(max(side_list))
         spareArea = side_list[0] * side_list[1]
+        totalRibbon = totalRibbon + (2 * side_list[0] + 2 * side_list[1] + (l * w * h))
         totalArea = totalArea + packageArea + spareArea
         packageArea = 0
         spareArea = 0
     print(totalArea)
+    print(totalRibbon)
