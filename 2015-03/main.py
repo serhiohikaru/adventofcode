@@ -1,10 +1,6 @@
-house_array = ()
-for i in range(1, 100):
-    for j in range(1, 100):
-        house_array[i][j] = 0
-
 x = 50
 y = 50
+result_dic = {"5050": 1}
 with open("./input.txt", "r") as f:
     input = f.read()
     for char in input:
@@ -16,5 +12,8 @@ with open("./input.txt", "r") as f:
             x = x + 1
         elif char == "v":
             x = x - 1
-        house_array[x][y] = house_array[x][y] + 1
-        print(house_array)
+        key = str(x) + str(y)
+        if not key in result_dic:
+            result_dic.update({key: 0})
+        result_dic[key] += 1
+    print(len(result_dic))
